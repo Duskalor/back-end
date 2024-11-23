@@ -19,10 +19,10 @@ model User {
   email     String   @unique
   name      String?
   password  String
-  img       String?
-  followers String []
-  following String []
-  videos   Video[]
+  img       String? 
+  followers String [] @default([])
+  following String [] @default([])
+  videos   Video[] 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }

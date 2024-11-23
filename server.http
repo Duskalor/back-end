@@ -6,14 +6,11 @@ GET http://localhost:3000/api/user/
 
 ###
 POST http://localhost:3000/api/user/create
-
 Content-Type: application/json
+
 {
-  "name": "John Doe",
-  "email": "John@Doe.com",
+  "name": "Leslie",
+  "email": "John@Doe22223.com",
   "password": "password",
-  "img": "https://www.google.com",
-  "followers": [],
-  "following": [],
-  "videos": []
+  "img": "https://www.google.com"
 }

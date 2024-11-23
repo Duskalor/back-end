@@ -3,26 +3,54 @@ import { UserService } from '../services/userService';
 
 export class UserController {
   constructor(readonly userService: UserService) {}
-  async createUser(req: Request, res: Response) {
-    const body = req.body;
-    console.log(body);
-    // const result = await this.userService.createUser(body);
-    res.send(body);
-  }
 
-  deleteUser(req: Request, res: Response) {
-    res.send('delete User');
-  }
+  getUsers = async (req: Request, res: Response) => {
+    try {
+      const users = await this.userService.getUsers();
+      res.send(users);
+    } catch (error) {
+      res.status(500).send({ error: (error as Error).message });
+    }
+  };
 
-  updateUser(req: Request, res: Response) {
-    res.send('update User');
-  }
+  createUser = async (req: Request, res: Response) => {
+    try {
+      const body = req.body;
+      const result = await this.userService.createUser(body);
+      res.send(result);
+    } catch (error) {
+      res.status(500).send({ error: (error as Error).message });
+    }
+  };
 
-  async getUsers(req: Request, res: Response) {
-    const user = await this.userService.getUsers();
-    res.send(user);
-  }
-  getUsebyId(req: Request, res: Response) {
-    res.send('get User by ID');
-  }
+  deleteUser = async (req: Request, res: Response) => {
+    try {
+      const { id } = req.params;
+      const result = await this.userService.deleteUser(id);
+      res.send(result);
+    } catch (error) {
+      res.status(500).send({ error: (error as Error).message });
+    }
+  };
+
+  updateUser = async (req: Request, res: Response) => {
+    try {
+      const { id } = req.params;
+      const body = req.body;
+      const result = await this.userService.updateUser(id, body);
+      res.send(result);
+    } catch (error) {
+      res.status(500).send({ error: (error as Error).message });
+    }
+  };
+
+  getUserById = async (req: Request, res: Response) => {
+    try {
+      const { id } = req.params;
+      const user = await this.userService.getUserById(id);
+      res.send(user);
+    } catch (error) {
+      res.status(500).send({ error: (error as Error).message });
+    }
+  };
 }
