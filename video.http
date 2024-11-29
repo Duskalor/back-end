@@ -1,0 +1,32 @@
+GET http://localhost:4000/api/video/
+
+
+
+###
+POST http://localhost:4000/api/video/create
+Content-Type: application/json
+
+{
+  "title": "The best video",
+  "description": "This is the best video",
+  "url": "https://www.youtube.com/watch?v=9bZkp7q19f0",
+  "userId": "124839a3-fb83-4792-8f2e-dbe84f4db21f"
+}
+
+
+###
+
+DELETE http://localhost:4000/api/video/delete/75c9b9cb-a4dd-4a05-8ce5-4aa4d1c1ab22
+
+
+
+###
+PUT  http://localhost:4000/api/video/update/31d3c7de-e516-46da-bf71-e070177ece1f
+Content-Type: application/json
+
+{
+  "title": "The best video haaagagaga",
+  "description": "This is the best video asd",
+  "url": "https://www.youtube.com/watch?v=9bZkp7q19f0",
+  "userId": "124839a3-fb83-4792-8f2e-dbe84f4db21f"
+}

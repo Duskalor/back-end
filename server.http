@@ -1,16 +1,42 @@
 
 
-GET http://localhost:3000/api/user/
-
-
+GET http://localhost:4000/api/user/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEyNDgzOWEzLWZiODMtNDc5Mi04ZjJlLWRiZTg0ZjRkYjIxZiIsImlhdCI6MTczMjg0OTIzMn0.EBLPsGbggcJZK75cJo8fsX-4CEsOSt8Mb4IGQpIst2E
 
 ###
-POST http://localhost:3000/api/user/create
+DELETE http://localhost:4000/api/user/delete/349a0b0c-cbb4-4379-bc98-5efea3324933
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEyNDgzOWEzLWZiODMtNDc5Mi04ZjJlLWRiZTg0ZjRkYjIxZiIsImlhdCI6MTczMjg0OTIzMn0.EBLPsGbggcJZK75cJo8fsX-4CEsOSt8Mb4IGQpIst2E
+
+###
+POST http://localhost:4000/api/user/create
 Content-Type: application/json
 
 {
   "name": "Leslie",
   "email": "John@Doe22223.com",
+  "password": "password",
+  "img": "https://www.google.com"
+}
+
+
+###
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+  "email": "John@Doe22223.com",
+  "password": "password"
+}
+
+
+###
+POST http://localhost:4000/register
+Content-Type: application/json
+
+{
+  "name": "Leslie",
+  "email": "John@Doe22223.com",
+  "description" : "I am a developer",
   "password": "password",
   "img": "https://www.google.com"
 }
